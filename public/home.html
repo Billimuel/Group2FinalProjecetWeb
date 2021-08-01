@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <title>BAR|U Taguig City</title>
+</head>
+
+<body class="font-opensans">
+
+  <div class="container mx-auto h-screen">
+    <div class="flex flex-row w-full h-full ">
+      <div class="w-1/4 h-full flex flex-col items-center p-4 pt-16 bg-blue-100">
+        <img src="./img/logo.png" alt="logo" class="w-32 mb-4">
+        <h1 class="text-4xl font-oswald text-center">BAR/U</h1>
+        <div class="h-1 w-40 my-2 bg-white"></div>
+        <ul class="my-auto">
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="dashboard"><i
+              class="fas fa-tachometer-alt text-3xl mr-2"></i>
+            Dashboard</li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="manage-posts"><i
+              class="fas fa-newspaper text-3xl mr-2"></i>
+            Manage Posts</li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="register-users"><i
+              class="fa fa-user-circle text-3xl mr-2" aria-hidden=" true"></i> Register Users
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="certificate-indigency"><i
+              class="fa fa-id-card text-3xl mr-2" aria-hidden=" true"></i> Certificate of
+            Indigency
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="certificate-residency"><i
+              class="fa fa-building text-3xl mr-2" aria-hidden=" true"></i> Certificate of
+            Residency
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="certificate-barangay"><i
+              class="fa fa-copy text-3xl mr-2" aria-hidden=" true"></i> Barangay Certificate
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="certificate-clearance"><i
+              class="fa fa-search text-3xl mr-2" aria-hidden=" true"></i> Barangay Clearance
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="barangay-ID"><i
+              class="fa fa-id-card text-3xl mr-2" aria-hidden=" true"></i> Barangay ID</li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="health-certificate"><i
+              class="fa fa-hospital text-3xl mr-2" aria-hidden=" true"></i> Health Certificate
+          </li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="account-settings"><i
+              class="fa fa-cog text-3xl mr-2" aria-hidden=" true"></i> Settings</li>
+          <li class="text-xl  p-1 hover:text-red-700 cursor-pointer" id="logout"><i
+              class="fa fa-window-close text-3xl mr-2 " aria-hidden=" true"></i> Logout
+          </li>
+        </ul>
+        <div class="mb-12 flex flex-col justify-center items-center">
+          <p class="font-bold" id="day">Monday</p>
+          <p id="date">July 12, 2021</p>
+          <p id="digital-clock">9:00 PM</p>
+        </div>
+      </div>
+      <div class="w-3/4 h-full flex flex-col">
+        <!-- <div class="w-full h-20 bg-blue-100 flex items-center">
+          <h1 class="text-3xl uppercase font-oswald ml-2">Barangay Automated Registrar</h1>
+        </div> -->
+        <div class="w-full h-full bg-gray-100">
+          <div id="content" class="h-full flex flex-col items-center justify-start pt-12">
+            <div class="flex flex-col items-center justify-center h-full">
+              <img src="./img/white_logo.png" alt="white logo" class="w-80 mb-8">
+              <h1 class="text-gray-500">Select a Process to be Viewed</h1>
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCnszIcLOyWFakG6CdZ6auAfJe28WZqGb0",
+      authDomain: "baru-dc543.firebaseapp.com",
+      projectId: "baru-dc543",
+      storageBucket: "baru-dc543.appspot.com",
+      messagingSenderId: "208354417676",
+      appId: "1:208354417676:web:1d335e4490c30d8bce2229"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+    var storageRef = storage.ref();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"
+    integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/main2.js"></script>
+  <script src="./js/barangayCertificate.js"></script>
+  <script src="./js/clearance.js"></script>
+  <script src="./js/barangayID.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/settings.js"></script>
+</body>
+
+</html>

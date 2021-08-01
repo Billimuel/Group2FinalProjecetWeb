@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "tw:build": "tailwindcss build -i ./src/css/tailwind.css -o ./public/css/tailwind.css",
+    "tw:prod": "set NODE_ENV=\"production\" postcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
+    "tw:watch": "onchange \"tailwind.config.js\" \"./src/css/*.css\" -- npm run tw:build"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.4"
+  }
+}

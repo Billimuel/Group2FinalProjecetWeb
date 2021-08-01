@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/tailwind.css">
+
+
+  <title>BAR|U Taguig City</title>
+</head>
+
+<body class="font-opensans">
+
+  <div class="container mx-auto h-screen">
+    <div class="flex flex-row w-full h-full ">
+      <div class="w-1/3 h-full ">
+        <img
+          src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt="" class="object-cover h-full rounded-tl-xl rounded-l-xl">
+      </div>
+
+      <div class="w-2/3 h-full">
+        <div class="h-full rounded-tr-xl rounded-r-xl bg-blue-100 flex justify-center items-center">
+          <div class="rounded-lg p-8 flex flex-col items-center ">
+            <img src="./img/logo.png" alt="logo" class="w-24 pb-4">
+            <h1 class="text-4xl font-oswald text-center">BAR/U</h1>
+            <div class="h-1 w-40 my-2 bg-white"></div>
+            <p class="text-center">The highest of distinctions is service to others</p>
+
+            <form class="mt-8 flex flex-col w-4/5" id="login-form">
+              <input type="email" name="email" id="email" placeholder="Email Address" class="p-2 rounded-lg mb-4">
+              <input type="password" name="password" id="password" placeholder="Password" class="p-2 rounded-lg mb-4">
+
+              <!-- This is an example component -->
+              <div class="relative inline-flex mb-4">
+                <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 412 232">
+                  <path
+                    d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                    fill="#648299" fill-rule="nonzero" />
+                </svg>
+                <select
+                  class="border border-gray-300 rounded-xl w-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+                  id="barangay">
+                  <option>Bagumbayan</option>
+                  <option>Bambang</option>
+                  <option>Calzada</option>
+                  <option>Central Bicutan</option>
+                  <option>Central Signal Village</option>
+                  <option>Fort Bonifacio</option>
+                  <option>Hagonoy</option>
+                  <option>Ibayo Tipas</option>
+                  <option>Katuparan</option>
+                  <option>Ligid Tipas</option>
+                  <option>Lower Bicutan</option>
+                  <option>Maharlika</option>
+                  <option>Napindan</option>
+                  <option>New Lower Bicutan</option>
+                  <option>North Daang Hari</option>
+                  <option>North Signal Village</option>
+                  <option>Palingon Tipas</option>
+                  <option>Pinagsama</option>
+                  <option>San Miguel</option>
+                  <option>Santa Ana</option>
+                  <option>South Daang Hari</option>
+                  <option>South Signal Village</option>
+                  <option>Tanyag</option>
+                  <option>Tuktukan</option>
+                  <option>Upper Bicutan</option>
+                  <option>Ususan</option>
+                  <option>Wawa</option>
+                  <option>Western Bicutan</option>
+                </select>
+              </div>
+
+              <input type="submit" value="Login"
+                class="bg-blue-300 p-2 rounded-lg mb-4 text-white hover:bg-blue-400 transition-colors duration-300">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCnszIcLOyWFakG6CdZ6auAfJe28WZqGb0",
+      authDomain: "baru-dc543.firebaseapp.com",
+      projectId: "baru-dc543",
+      storageBucket: "baru-dc543.appspot.com",
+      messagingSenderId: "208354417676",
+      appId: "1:208354417676:web:1d335e4490c30d8bce2229"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+    const storageRef = storage.ref();
+  </script>
+
+  <script src="./js/auth.js"></script>
+</body>
+
+</html>
